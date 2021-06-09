@@ -28,10 +28,10 @@
     return self;
 }
 
--(id) initWithView: (id<HomeView>) aView
+-(id) initWithView: (id<HomeView>) aView andService: (id<FlikrService>) service
 {
     if (self = [super init]) {
-        self.flikrService = [[FlikrServiceImpl alloc] initWithHandler:[[URLSessionHTTPHandler alloc] init]]; //TODO
+        self.flikrService = service;
         self.view = aView;
     }
     
@@ -40,8 +40,7 @@
 
 -(void) onLoad
 {
-    // Load data
-    [self.flikrService searchWithCount:12 onResult:^ (NSError *error, NSArray<Photo *> *photos){
+    [self.flikrService searchWithCount:120 onResult:^ (NSError *error, NSArray<Photo *> *photos){
         
         dispatch_async(dispatch_get_main_queue(), ^{
 

@@ -104,4 +104,23 @@
     [self.tableView reloadData];
 }
 
+-(void) showAlert: (NSString *) msg
+{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Error"
+                                 message:msg
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * ok = [UIAlertAction
+                          actionWithTitle:@"OK"
+                          style:UIAlertActionStyleDefault
+                          handler:^(UIAlertAction * action)
+                          { }];
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 @end

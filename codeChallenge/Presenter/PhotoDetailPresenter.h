@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) setData: (PhotoDetail *) data;
 -(void) setImage: (NSData *) data;
+-(void) showAlert: (NSString *) msg;
 
 @end
 

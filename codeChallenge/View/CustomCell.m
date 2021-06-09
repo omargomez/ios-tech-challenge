@@ -19,7 +19,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     
-    self.imageCell.image = nil;
+    [self.presenter prepareForReuse];
 }
 
 -(void) setTitle: (NSString *) aTitle

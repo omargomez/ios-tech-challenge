@@ -14,6 +14,7 @@
 
 @property (weak) id<HomeCellView> view;
 @property (strong) id<FlikrService> flikrService;
+@property (strong) NSString *cellId;
 
 @end
 
@@ -29,6 +30,12 @@
     return self;
 }
 
+-(void) prepareForReuse {
+    [self.view setImage: [UIImage imageNamed:@"defaultPhoto"]];
+    [self.view setTitle: @""];
+    [self.view setSubtitle: @""];
+}
+
 -(void) reloadPhotoItem: (Photo *) item
 {
     [self.view setTitle: item.title];
@@ -37,9 +44,15 @@
     // La buena es la carga de la imagen
     
     [self.view setImage: [UIImage imageNamed:@"defaultPhoto"]];
+    self.cellId = [NSString stringWithString:item.photoId];
+    NSString *loadingId = [NSString stringWithString:item.photoId];
     [self.flikrService loadImageWithUrl:item.imageUrl onResult:^(NSError* error, NSData* data) {
         
-        //TODO: IS loading the same as before???
+        if (![loadingId isEqualToString:self.cellId]) {
+            NSLog(@"reloadPhotoItem out of sync!!!");
+            return;
+        }
+        
         if (error != NULL) {
             NSLog(@"Error while loading image: %@", error.localizedDescription);
             return;

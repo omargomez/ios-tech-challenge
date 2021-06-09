@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol HomeCellPresenter <NSObject>
 
 -(void) reloadPhotoItem: (Photo *) item;
+-(void) prepareForReuse;
 
 @end
 

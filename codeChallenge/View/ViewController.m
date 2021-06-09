@@ -28,7 +28,8 @@ NSString *const FlickrAPIKey = @"2ed35a9f4fda03bc96e73dbd03602780";
     [super viewDidLoad];
     
     self.photoArray = @[];
-    self.presenter = [[HomePresenterImpl alloc] initWithView: self];
+    self.presenter = [[HomePresenterImpl alloc] initWithView: self
+                      andService:[[FlikrServiceImpl alloc] initWithHandler:[[URLSessionHTTPHandler alloc] init]]];
     [self.presenter onLoad];
     
     UINib *cellNib = [UINib nibWithNibName:@"CustomCell" bundle:nil];
@@ -53,11 +54,7 @@ NSString *const FlickrAPIKey = @"2ed35a9f4fda03bc96e73dbd03602780";
     
     static NSString *identifier = @"CustomCell";
     
-     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (cell == nil) {
-        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell.presenter == nil) {
         cell.presenter = [[HomeCellPresenterImpl alloc] initWithView:cell andFlikrService: [[FlikrServiceImpl alloc] initWithHandler:[[URLSessionHTTPHandler alloc] init]] ];
@@ -88,7 +85,20 @@ NSString *const FlickrAPIKey = @"2ed35a9f4fda03bc96e73dbd03602780";
 
 -(void) showAlert: (NSString *) msg
 {
-    // TODO
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Error"
+                                 message:msg
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * ok = [UIAlertAction
+                          actionWithTitle:@"OK"
+                          style:UIAlertActionStyleDefault
+                          handler:^(UIAlertAction * action)
+                          { }];
+    
+     [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void) setData: (NSArray<Photo *> *) photoArr

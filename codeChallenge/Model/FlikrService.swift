@@ -27,6 +27,7 @@ enum FlikrServiceError: Error {
 
     var httpHandler: HTTPHandler
     let apiKey = "2ed35a9f4fda03bc96e73dbd03602780"
+    let tags = "cooking"
     
     @objc init(handler: HTTPHandler) {
         self.httpHandler = handler
@@ -34,7 +35,7 @@ enum FlikrServiceError: Error {
     
     func search(count: Int, onResult: @escaping (Error?, [Photo]?) -> ()) {
         
-        guard let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(self.apiKey)&tags=cooking&per_page=\(count)&format=json&nojsoncallback=1&extras=date_taken,description,tags,url_t") else {
+        guard let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(self.apiKey)&tags=\(self.tags)&per_page=\(count)&format=json&nojsoncallback=1&extras=date_taken,description,tags,url_t") else {
             onResult(FlikrServiceError.invalidUrl,nil)
             return
         }

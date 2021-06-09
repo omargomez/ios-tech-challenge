@@ -9,6 +9,11 @@
 import Foundation
 @testable import codeChallenge
 
+enum MockHTTPHandlerError: Error {
+    case dataError
+    case patternError
+}
+
 class MockHTTPHandler: HTTPHandler {
 
     var patternResourceDict: [String: URL] = [:]
@@ -21,15 +26,15 @@ class MockHTTPHandler: HTTPHandler {
             for (key, value) in self.patternResourceDict {
                 if strUrl.contains(key) {
                     guard let data = try? Data(contentsOf: value) else {
-                        onResult(nil, nil, nil) //TODO
-                        return // error
+                        onResult(nil, nil, MockHTTPHandlerError.dataError)
+                        return
                     }
                     onResult(data, nil, nil)
                     return
                 }
             }
             
-            onResult(nil, nil, nil) // Error
+            onResult(nil, nil, MockHTTPHandlerError.patternError)
         }
     }
     

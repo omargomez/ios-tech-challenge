@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class Photo;
+@protocol FlikrService;
 
 @protocol HomePresenter <NSObject>
 
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePresenterImpl : NSObject <HomePresenter>
 
--(id) initWithView: (id<HomeView>) aView;
+-(id) initWithView: (id<HomeView>) aView andService: (id<FlikrService>) service;
 
 @end
 

@@ -36,19 +36,27 @@
     // Will try to load the detail for this item
     [self.service getInfoWithPhotoId:self.selected.photoId onResult:^(NSError *error, PhotoDetail *detail){
 
-        // TODO: Error handling (presenters)
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.view setData: detail];
+            
+            if (error) {
+                [self.view showAlert: error.localizedDescription];
+            } else {
+                [self.view setData: detail];
+                
+                [self.service loadImageWithPhotoId:detail.photoId secret:detail.secret server:detail.server onResult:^(NSError *imgError, NSData *data){
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (imgError) {
+                            [self.view showAlert: imgError.localizedDescription];
+                        } else {
+                            [self.view setImage: data];
+                        }
+                    });
+                }];
+
+            }
+            
         });
-        
-        [self.service loadImageWithPhotoId:detail.photoId secret:detail.secret server:detail.server onResult:^(NSError *error, NSData *data){
-            
-            //TODO: Error check
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.view setImage: data];
-            });
-        }];
         
     }];
     
