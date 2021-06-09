@@ -1,0 +1,192 @@
+{
+    "photo": {
+        "id": "51234338681",
+        "secret": "da1fe6814e",
+        "server": "65535",
+        "farm": 66,
+        "dateuploaded": "1623180898",
+        "isfavorite": 0,
+        "license": 0,
+        "safety_level": 0,
+        "rotation": 90,
+        "originalsecret": "9d0d7abc18",
+        "originalformat": "jpg",
+        "owner": {
+            "nsid": "84904494@N00",
+            "username": "Eudaemonius",
+            "realname": "",
+            "location": "Santa Barbara, CA, USA",
+            "iconserver": "2339",
+            "iconfarm": 3,
+            "path_alias": ""
+        },
+        "title": {
+            "_content": "scan0013"
+        },
+        "description": {
+            "_content": ""
+        },
+        "visibility": {
+            "ispublic": 1,
+            "isfriend": 0,
+            "isfamily": 0
+        },
+        "dates": {
+            "posted": "1623180898",
+            "taken": "2021-06-08 09:58:00",
+            "takengranularity": 0,
+            "takenunknown": 0,
+            "lastupdate": "1623181024"
+        },
+        "views": 5,
+        "editability": {
+            "cancomment": 0,
+            "canaddmeta": 0
+        },
+        "publiceditability": {
+            "cancomment": 1,
+            "canaddmeta": 0
+        },
+        "usage": {
+            "candownload": 1,
+            "canblog": 0,
+            "canprint": 0,
+            "canshare": 1
+        },
+        "comments": {
+            "_content": 0
+        },
+        "notes": {
+            "note": []
+        },
+        "people": {
+            "haspeople": 0
+        },
+        "tags": {
+            "tag": [
+                {
+                    "id": "5999066-51234338681-520867361",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "BK0672A",
+                    "_content": "bk0672a",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-1668",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "French",
+                    "_content": "french",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-6379",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Country",
+                    "_content": "country",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-713",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Cooking",
+                    "_content": "cooking",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-17261",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "1967",
+                    "_content": "1967",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-3444",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "RAW",
+                    "_content": "raw",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-520679689",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "2021-06-08",
+                    "_content": "20210608",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-13946262",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Eudaemonius",
+                    "_content": "eudaemonius",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-23877825",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "BlueMarbleBounty",
+                    "_content": "bluemarblebounty",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-7603",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Cook",
+                    "_content": "cook",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-2104",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Book",
+                    "_content": "book",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-2193",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Cookbook",
+                    "_content": "cookbook",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-24319",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Recipes",
+                    "_content": "recipes",
+                    "machine_tag": 0
+                },
+                {
+                    "id": "5999066-51234338681-1386",
+                    "author": "84904494@N00",
+                    "authorname": "Eudaemonius",
+                    "raw": "Vintage",
+                    "_content": "vintage",
+                    "machine_tag": 0
+                }
+            ]
+        },
+        "urls": {
+            "url": [
+                {
+                    "type": "photopage",
+                    "_content": "https://www.flickr.com/photos/84904494@N00/51234338681/"
+                }
+            ]
+        },
+        "media": "photo"
+    },
+    "stat": "ok"
+}

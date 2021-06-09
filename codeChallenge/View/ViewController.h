@@ -7,8 +7,9 @@
 //
 
 @import UIKit;
+#import "HomePresenter.h"
 
-@interface ViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HomeView>
 
 
 @end

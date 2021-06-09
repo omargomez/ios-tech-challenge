@@ -7,10 +7,12 @@
 //
 
 @import UIKit;
+#import "HomeCellPresenter.h"
 
-@interface CustomCell : UITableViewCell
+@interface CustomCell : UITableViewCell <HomeCellView>
 @property (weak, nonatomic) IBOutlet UIImageView *imageCell;
 @property (weak, nonatomic) IBOutlet UILabel *imageTitleCell;
 @property (weak, nonatomic) IBOutlet UILabel *imageSubtitleCell;
+@property (strong, nonatomic) id<HomeCellPresenter> presenter;
 
 @end
