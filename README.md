@@ -1,3 +1,19 @@
+# iOS Tech Challenge: What to eat (Proposed solution). 
+
+(For the challenge description see bellow)
+
+This repository fork contains the changes implementing the challenge App. These are the highlights of this work:
+
+- An MVP pattern was used to decouple the view from the model. 
+- The 'View' project folder groups the controllers (two of them) on other supporting views used in the solution
+- In the 'Model' folder are the entities and services which are used to access the Flikr endpoints. 
+- The 'Presenter' folder contain the classes that respond to user actions, they are decoupled from the controllers and view thru protocols, so this layer (along with the Model) can be reused by other projects
+- The App target only uses two Swift classes, the Flikr service and it's suporting http utility. The rest of the project are Objective-C classes.
+- There is a unit testing target written in Swift (for productivity), within it there are two XCTestCases, one which test the Flikr service and other which test one of the presenters (partially)
+- For a quick look Check the resources folder for a screen recording of the App.
+
+Instead of adding more features I decided to focus on making the App scalable and testable, I hope this final result will show it.
+
 # iOS Tech Challenge: What to eat. 
 
 Welcome to the Orderbird Tech Challenge :-).
